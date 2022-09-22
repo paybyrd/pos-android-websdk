@@ -1,0 +1,54 @@
+{
+  "name": "pos-android-websdk",
+  "version": "1.0.0",
+  "description": "Javascript Integration with Paybyrd POS SDK",
+  "main": "dist/pos-android-websdk.min.js",
+  "type": "module",
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/paybyrd/pos-android-websdk.git"
+  },
+  "scripts": {
+    "prepublish": "babel src/pos-android-websdk.js --out-dir dist --out-file-extension .min.js"
+  },
+  "keywords": [
+    "pos",
+    "android",
+    "websdk",
+    "sdk",
+    "paybyrd",
+    "javascript"
+  ],
+  "author": "paulo.ferreira@paybyrd.com",
+  "license": "MIT",
+  "bugs": {
+    "url": "https://github.com/paybyrd/pos-android-websdk/issues"
+  },
+  "homepage": "https://github.com/paybyrd/pos-android-websdk#readme",
+  "devDependencies": {
+    "@babel/cli": "^7.18.10",
+    "@babel/preset-env": "^7.19.1",
+    "babel-plugin-module-resolver": "^4.1.0",
+    "babel-preset-minify": "^0.5.2"
+  },
+  "babel": {
+    "presets": [
+      [
+        "@babel/preset-env",
+        {
+          "modules": false
+        }
+      ],
+      [
+        "minify",
+        {
+          "keepFnName": true
+        }
+      ]
+    ],
+    "plugins": [
+      "@babel/plugin-transform-spread",
+      "babel-plugin-module-resolver"
+    ]
+  }
+}
